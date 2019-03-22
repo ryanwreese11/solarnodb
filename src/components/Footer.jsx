@@ -2,9 +2,13 @@ import React from 'react'
 
 function Footer() {
     return (
-        <div className="footer" style={{color: "white"}}>
+        <footer className="footer" style={{color: "white"}}>
+        <div className="footItems">
             <h1>Footer</h1>
+            <h1>Name</h1>
         </div>
+        </footer>
+        
     )
 }
 

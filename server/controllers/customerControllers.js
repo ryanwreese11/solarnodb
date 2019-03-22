@@ -9,7 +9,10 @@ let customers = [
     street: '1028 E 2500 N',
     city: 'Provo',
     state: 'UT',
-    zip: '84604'
+    zip: '84604',
+    currentUsage: '12309',
+    ppw: '',
+    systemSize: ''
     
   },
   {
@@ -21,8 +24,26 @@ let customers = [
     street: '1234 Fake St',
     city: 'South Jordan',
     state: 'UT',
-    zip: '88888'
-    
+    zip: '88888',
+    currentUsage: '9899',
+    ppw: '',
+    systemSize: ''
+
+  },
+  {
+    id: id++,
+    firstName: 'Conlin',
+    lastName: 'Gull',
+    phoneNumber: '801-456-7899',
+    email: 'cgull@gmail.com',
+    street: '1234 Fake St',
+    city: 'South Jordan',
+    state: 'UT',
+    zip: '88888',
+    currentUsage: '12309',
+    ppw: '',
+    systemSize: ''
+
   }
 ]
 
@@ -33,7 +54,7 @@ module.exports = {
   },
 
   create: (req, res) => {
-    const{ firstName, lastName, phoneNumber, email, street, city, state, zip } = req.body
+    const{ firstName, lastName, phoneNumber, email, street, city, state, zip, currentUsage, ppw, systemSize } = req.body
     
     const customer = {
       id: id++,
@@ -44,7 +65,12 @@ module.exports = {
       street,
       city,
       state,
-      zip
+      zip,
+      currentUsage,
+      ppw,
+      systemSize,
+     
+
       
     }
     customers.push(customer)
@@ -54,7 +80,7 @@ module.exports = {
   update: (req, res) => {
     let index = null
     const { id } = req.params
-    const{ firstName, lastName, phoneNumber, email, street, city, state, zip } = req.body
+    const{ firstName, lastName, phoneNumber, email, street, city, state, zip, currentUsage, ppw, systemSize } = req.body
     customers.forEach((customer, i) => {
       if (customer.id === id * 1) {
         index = i
@@ -69,7 +95,10 @@ module.exports = {
       street: street || customers[index].street,
       city: city || customers[index].city,
       state: state || customers[index].state,
-      zip: zip || customers[index].zip
+      zip: zip || customers[index].zip,
+      currentUsage: currentUsage || customers[index].currentUsage,
+      ppw: ppw || customers[index].ppw,
+      systemSize: systemSize || customers[index].systemSize,
     }
       res.status(200).send(customers)
   },

@@ -14,10 +14,26 @@ export class Customers extends Component {
       street: '',
       city: '',
       state: '',
-      zip: ''
+      zip: '',
+      currentUsage: '',
+      edit: false
+
     }
 
   }
+
+  handleNewClick = () => {
+    this.setState({
+      edit: true
+    })
+  }
+
+  handleCancelClick = () => {
+    this.setState({
+      edit: false
+    })
+  }
+
 
   handleChange = e => {
     let { name, value } = e.target
@@ -29,41 +45,64 @@ export class Customers extends Component {
 
   handleClick = () => {
     let customer = this.state
+    this.setState({
+      edit: false
+    })
 
     this.props.createCustomer(customer)
+
   }
 
-  
+
 
 
 
 
   render() {
-    return (
-      <div className="theInputs">
-        <div className="inputFields">
-          <div onChange={this.handleChange} >
-            <input type="text" name="firstName" placeholder="First Name" onChange={this.handleChange} />
-            <input type="text" name="lastName" placeholder="Last Name" onChange={this.handleChange} />
-            <input type="text" name="phoneNumber" placeholder="Phone" onChange={this.handleChange} />
-            <input type="text" name="email" placeholder="Email" onChange={this.handleChange} />
+    return this.state.edit ? (
+      <div>
+        <div className="theInputs">
+          <div className="inputFields">
+            <div>
+              <input type="text" name="firstName" placeholder="First Name" onChange={this.handleChange} />
+              <input type="text" name="lastName" placeholder="Last Name" onChange={this.handleChange} />
+              <input type="text" name="phoneNumber" placeholder="Phone" onChange={this.handleChange} />
+              <input type="text" name="email" placeholder="Email" onChange={this.handleChange} />
+            </div>
+            <div>
+              <input type="text" name="street" placeholder="Street" onChange={this.handleChange} />
+              <input type="text" name="city" placeholder="City" onChange={this.handleChange} />
+              <input type="text" name="state" placeholder="State" onChange={this.handleChange} />
+              <input type="text" name="zip" placeholder="Zip code" onChange={this.handleChange} />
+            </div>
+            <div>
+              <input type="text" name="currentUsage" placeholder="Usage" onChange={this.handleChange} />
+            </div>
           </div>
-          <div>
-            <input type="text" name="street" placeholder="Street" onChange={this.handleChange} />
-            <input type="text" name="city" placeholder="City" onChange={this.handleChange} />
-            <input type="text" name="state" placeholder="State" onChange={this.handleChange} />
-            <input type="text" name="zip" placeholder="Zip code" onChange={this.handleChange} />
           </div>
-        </div>
           <button onClick={this.handleClick}>Create Customer</button>
-        <div>
-        </div>
+          <button style={{ margin: "2px" }} onClick={this.handleCancelClick}>Cancel</button>
+         
+
         {this.props.customers.map(item => {
-            return <Customer key={item.id} customer={item}
-            updateCustomer={this.props.updateCustomer}/>
-          })}
+          return <Customer key={item.id} customer={item}
+            updateCustomer={this.props.updateCustomer}
+            deleteCustomer={this.props.deleteCustomer} />
+           
+        })}
       </div>
-    )
+    ) : (
+        <div>
+          <button className="newCustomer" onClick={this.handleNewClick}>New Customer</button>
+          {this.props.customers.map(item => {
+            return <Customer key={item.id} customer={item}
+              updateCustomer={this.props.updateCustomer}
+              deleteCustomer={this.props.deleteCustomer}
+              />
+          })}
+
+        </div>
+      )
   }
 }
 

@@ -5,6 +5,7 @@
 
 .App {
   text-align: center;
+  
 }
 
 
@@ -22,8 +23,9 @@
 
 body {
   background: -webkit-gradient(linear,left top,left bottom,from(rgba(79, 111, 129, 0.623))), url('https://images.unsplash.com/photo-1513880989635-6eb491ce7f5b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1934&q=80');
-  background-color: rgba(172, 172, 172, 0.349);
-  background-attachment: fixed;
+  
+ 
+  
   
   
 }
@@ -31,11 +33,30 @@ body {
 
 
 .customers {
+  overflow: scroll;
+
+  display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+	align-content: flex-end;
+  padding-left: 7px;
+  padding-right: 6px;
+  padding-bottom: 3px;
+  margin: 20px;
+  background-color: rgba(255, 255, 255, 0.904);
+  color: rgb(27, 27, 27);
+  text-align: left;
+  border-radius: 5px;
+}
+
+.customerUpdate {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
 	justify-content: flex-start;
-	align-items: baseline;
+	align-items: center;
 	align-content: center;
   padding: 5px;
   margin: 20px;
@@ -45,13 +66,35 @@ body {
   border-radius: 5px;
 }
 
+.updateButtons {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: flex-end;
+	align-content: center;
+  height: 190px;
+}
+
 
 .theInputs {
-  
+  display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
 }
 
 .inputFields {
-background-color: white;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+  background-color: white;
+width: 45%
 
 
 
@@ -73,6 +116,56 @@ button {
   border: 0
 }
 
+.deleteButton {
+  background-color: rgba(212, 73, 73, 0.884);
+  
+}
+
 .disposition {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: flex-end;
+  align-content: space-between;
+  margin: 1px;
+  height: 247px;
+}
+
+.header {
+  
+  font-size: 30px;
+  text-align: start;
+  padding: 0;
+  margin-top: 0;
+
+  
+}
+
+footer {
+  position: absolute;
+  margin-right: 5px;
+  padding-right: 10px;
+
+  font-size: 12;
+  width: 100%
+}
+
+.footItems {
+  margin: 5px;
+  width: 100%;
+  display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: flex-end;
+	align-content: center;
+}
+
+.newCustomer {
+  height: 44px;
+  width: 300px;
+  font-size: 30px;
+  border-radius: 5px;
 
 }

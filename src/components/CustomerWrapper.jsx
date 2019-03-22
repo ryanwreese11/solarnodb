@@ -29,6 +29,16 @@ export class CustomerWrapper extends Component {
     }).catch(err => console.log('There was an error creating customer', err))
   }
 
+  deleteCustomer = id => {
+    axios.delete(`/api/customers/${id}`).then(res => {
+      this.setState({
+        customers: res.data
+      })
+    })
+
+
+  }
+
   componentDidMount() {
     axios.get('/api/customers').then(res => {
       this.setState({
@@ -42,13 +52,16 @@ export class CustomerWrapper extends Component {
   render() {
     console.log(this.state.customers)
     return (
-      <div>
+      <div className="wholeApp">
         <Header />
 
         <Customers
           customers={this.state.customers}
           createCustomer={this.createCustomer}
-          updateCustomer={this.updateCustomer} />
+          updateCustomer={this.updateCustomer}
+          deleteCustomer={this.deleteCustomer}
+            />
+        
         <Footer />
       </div>
     )
