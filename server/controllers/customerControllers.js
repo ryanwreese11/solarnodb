@@ -10,9 +10,11 @@ let customers = [
     city: 'Provo',
     state: 'UT',
     zip: '84604',
-    currentUsage: '12309',
+    currentUsage: '8432',
     ppw: '',
-    systemSize: ''
+    systemSize: '',
+    totalCost: '',
+    status: ''
     
   },
   {
@@ -28,7 +30,8 @@ let customers = [
     currentUsage: '9899',
     ppw: '',
     systemSize: '',
-    totalCost: ''
+    totalCost: '',
+    status: ''
 
   },
   {
@@ -44,7 +47,8 @@ let customers = [
     currentUsage: '12309',
     ppw: '',
     systemSize: '',
-    totalCost: ''
+    totalCost: '',
+    status: ''
 
   },
   {
@@ -57,10 +61,11 @@ let customers = [
     city: 'Bridgeport',
     state: 'CT',
     zip: '06604',
-    currentUsage: '12309',
+    currentUsage: '14567',
     ppw: '',
     systemSize: '',
-    totalCost: ''
+    totalCost: '',
+    status: ''
 
   }
 ]
@@ -69,10 +74,11 @@ let customers = [
 module.exports = {
   get: (req, res) => {
     res.send(customers)
+    
   },
 
   create: (req, res) => {
-    const{ firstName, lastName, phoneNumber, email, street, city, state, zip, currentUsage, ppw, systemSize } = req.body
+    const{ firstName, lastName, phoneNumber, email, street, city, state, zip, currentUsage, ppw, systemSize, status } = req.body
     
     const customer = {
       id: id++,
@@ -87,6 +93,7 @@ module.exports = {
       currentUsage,
       ppw,
       systemSize,
+      status
      
 
       
@@ -98,7 +105,7 @@ module.exports = {
   update: (req, res) => {
     let index = null
     const { id } = req.params
-    const{ firstName, lastName, phoneNumber, email, street, city, state, zip, currentUsage, ppw, systemSize } = req.body
+    const{ firstName, lastName, phoneNumber, email, street, city, state, zip, currentUsage, ppw, systemSize, status } = req.body
     customers.forEach((customer, i) => {
       if (customer.id === id * 1) {
         index = i
@@ -117,6 +124,7 @@ module.exports = {
       currentUsage: currentUsage || customers[index].currentUsage,
       ppw: ppw || customers[index].ppw,
       systemSize: systemSize || customers[index].systemSize,
+      status: status || customers[index].status
     }
       res.status(200).send(customers)
   },

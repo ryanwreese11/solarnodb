@@ -16,6 +16,9 @@ export class Customers extends Component {
       state: '',
       zip: '',
       currentUsage: '',
+      systemSize: '',
+      ppw: '',
+      status: "New",
       edit: false
 
     }
@@ -93,9 +96,9 @@ export class Customers extends Component {
       </div>
     ) : (
         <div>
-          <button className="newCustomer" onClick={this.handleNewClick}>New Customer</button>
+          <button className="newCustomer"  onClick={this.handleNewClick}>New Customer</button>
           {this.props.customers.map(item => {
-            return <Customer key={item.id} customer={item}
+            return <Customer  key={item.id} customer={item}
               updateCustomer={this.props.updateCustomer}
               deleteCustomer={this.props.deleteCustomer}
               />

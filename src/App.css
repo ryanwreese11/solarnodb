@@ -1,6 +1,7 @@
 * {
   font-family: 'Source Code Pro', monospace;
   box-sizing: border-box;
+  text-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19)
 }
 
 .App {
@@ -27,6 +28,22 @@
 	align-content: stretch;
 }
 
+.sold {
+  background-color: rgba(0, 80, 0, 0.788)
+}
+
+.interested {
+  background-color: rgba(156, 155, 48, 0.788)
+}
+
+.callBack {
+  background-color: rgba(156, 122, 48, 0.788)
+}
+
+.declined {
+  background-color: rgba(156, 55, 48, 0.788)
+}
+
 
 
 
@@ -44,17 +61,17 @@ body {
 
 .customers {
   overflow: scroll;
-
+  box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
   display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
 	justify-content: space-between;
-	align-items: center;
+	align-items: baseline;
 	align-content: flex-end;
   padding-left: 7px;
   padding-right: 6px;
-  padding-bottom: 3px;
-  margin: 20px;
+  padding-bottom: 6px;
+  margin: 15px;
   background-color: rgba(255, 255, 255, 0.904);
   color: rgb(27, 27, 27);
   text-align: left;
@@ -74,6 +91,7 @@ body {
   color: rgb(27, 27, 27);
   text-align: left;
   border-radius: 5px;
+  
 }
 
 .updateButtons {
@@ -84,6 +102,7 @@ body {
 	align-items: flex-end;
 	align-content: center;
   height: 190px;
+  
 }
 
 
@@ -123,15 +142,23 @@ background-color: rgba(255, 255, 255, 0.904);
 button {
   background-color: rgb(54, 54, 54);
   color: rgb(228, 228, 228);
-  border: 0
+  border: 0;
+  transition: 0.3s;
+  cursor: pointer;
+  opacity: 0.85;
+  
 }
 
 .deleteButton {
   background-color: rgba(255, 255, 255, 0);
   color: rgb(54, 54, 54);
-  font-size: 20px
+  font-size: 20px;
+  padding: 0;
+  margin-top: 0px;
+  transition: 0.3s;
   
 }
+button:hover {opacity: 1}
 
 .disposition {
 	display: flex;
@@ -141,7 +168,8 @@ button {
 	align-items: flex-end;
   align-content: space-between;
   margin: 1px;
-  height: 340px;
+  height: 260px;
+  
 }
 
 .header {
@@ -156,6 +184,8 @@ button {
   padding-left: 25px;
   margin-top: 0; 
   padding-right: 25px;
+  margin: 0;
+  
 }
 
 .createCustomer {
@@ -189,4 +219,8 @@ footer {
   font-size: 30px;
   border-radius: 5px;
 
+}
+
+.systemInfo {
+  
 }

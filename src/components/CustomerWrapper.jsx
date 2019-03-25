@@ -14,13 +14,15 @@ export class CustomerWrapper extends Component {
   }
 
   updateCustomer = customer => {
+    console.log(customer)
     axios.put(`/api/customers/${customer.id}`, customer).then(res => {
+      console.log(res.data)
       this.setState({
         customers: res.data
       })
     }).catch(err => console.log(err))
+    
   }
-
   createCustomer = customer => {
     axios.post('/api/customers', customer).then(res => {
       this.setState({
