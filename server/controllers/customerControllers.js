@@ -4,7 +4,7 @@ let customers = [
     id: id++,
     firstName: 'Ryan',
     lastName: 'Reese',
-    phoneNumber: '801-380-2038',
+    phoneNumber: '801.380.2038',
     email: 'ryan.reese11@gmail.com',
     street: '1028 E 2500 N',
     city: 'Provo',
@@ -19,7 +19,7 @@ let customers = [
     id: id++,
     firstName: 'Josh',
     lastName: 'Anderson',
-    phoneNumber: '801-456-7899',
+    phoneNumber: '801.456.7899',
     email: 'janderson@gmail.com',
     street: '1234 Fake St',
     city: 'South Jordan',
@@ -27,14 +27,15 @@ let customers = [
     zip: '88888',
     currentUsage: '9899',
     ppw: '',
-    systemSize: ''
+    systemSize: '',
+    totalCost: ''
 
   },
   {
     id: id++,
     firstName: 'Conlin',
     lastName: 'Gull',
-    phoneNumber: '801-456-7899',
+    phoneNumber: '801.456.899',
     email: 'cgull@gmail.com',
     street: '1234 Fake St',
     city: 'South Jordan',
@@ -42,7 +43,24 @@ let customers = [
     zip: '88888',
     currentUsage: '12309',
     ppw: '',
-    systemSize: ''
+    systemSize: '',
+    totalCost: ''
+
+  },
+  {
+    id: id++,
+    firstName: 'Kami',
+    lastName: 'Reese',
+    phoneNumber: '385.888.3961',
+    email: 'kamimchenry@gmail.com',
+    street: '33 Coleman St',
+    city: 'Bridgeport',
+    state: 'CT',
+    zip: '06604',
+    currentUsage: '12309',
+    ppw: '',
+    systemSize: '',
+    totalCost: ''
 
   }
 ]

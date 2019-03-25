@@ -76,7 +76,7 @@ export class Customers extends Component {
               <input type="text" name="zip" placeholder="Zip code" onChange={this.handleChange} />
             </div>
             <div>
-              <input type="text" name="currentUsage" placeholder="Usage" onChange={this.handleChange} />
+              <input type="text" name="currentUsage" placeholder="Electric Usage" onChange={this.handleChange} />
             </div>
           </div>
           </div>
