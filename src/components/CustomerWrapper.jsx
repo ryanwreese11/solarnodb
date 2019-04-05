@@ -21,8 +21,8 @@ export class CustomerWrapper extends Component {
         customers: res.data
       })
     }).catch(err => console.log(err))
-    
   }
+
   createCustomer = customer => {
     axios.post('/api/customers', customer).then(res => {
       this.setState({
@@ -37,8 +37,6 @@ export class CustomerWrapper extends Component {
         customers: res.data
       })
     })
-
-
   }
 
   componentDidMount() {
@@ -62,8 +60,8 @@ export class CustomerWrapper extends Component {
           createCustomer={this.createCustomer}
           updateCustomer={this.updateCustomer}
           deleteCustomer={this.deleteCustomer}
-            />
-        
+        />
+
         <Footer />
       </div>
     )

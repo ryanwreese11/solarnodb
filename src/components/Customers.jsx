@@ -20,9 +20,7 @@ export class Customers extends Component {
       ppw: '',
       status: "New",
       edit: false
-
     }
-
   }
 
   handleNewClick = () => {
@@ -40,7 +38,6 @@ export class Customers extends Component {
 
   handleChange = e => {
     let { name, value } = e.target
-
     this.setState({
       [name]: value
     })
@@ -51,20 +48,10 @@ export class Customers extends Component {
     this.setState({
       edit: false
     })
-
     this.props.createCustomer(customer)
-
   }
 
-
-
-
-
-
   render() {
-
-
-    
     return this.state.edit ? (
       <div>
         <div className="theInputs">
@@ -85,26 +72,24 @@ export class Customers extends Component {
               <input type="text" name="currentUsage" placeholder="Electric Usage" onChange={this.handleChange} />
             </div>
           </div>
-          </div>
-          <button onClick={this.handleClick}>Create Customer</button>
-          <button style={{ margin: "2px" }} onClick={this.handleCancelClick}>Cancel</button>
-         
-
+        </div>
+        <button onClick={this.handleClick}>Create Customer</button>
+        <button style={{ margin: "2px" }} onClick={this.handleCancelClick}>Cancel</button>
         {this.props.customers.map(item => {
           return <Customer key={item.id} customer={item}
             updateCustomer={this.props.updateCustomer}
             deleteCustomer={this.props.deleteCustomer} />
-           
+
         })}
       </div>
     ) : (
         <div>
-          <button className="newCustomer"  onClick={this.handleNewClick}>New Customer</button>
+          <button className="newCustomer" onClick={this.handleNewClick}>New Customer</button>
           {this.props.customers.map(item => {
-            return <Customer  key={item.id} customer={item}
+            return <Customer key={item.id} customer={item}
               updateCustomer={this.props.updateCustomer}
               deleteCustomer={this.props.deleteCustomer}
-              />
+            />
           })}
 
         </div>

@@ -18,14 +18,14 @@ export class Customer extends Component {
       currentUsage: props.customer.currentUsage,
       status: props.customer.status,
       edit: false,
-      
+
 
     }
   }
 
   multiply = (num1, num2) => Math.floor(Number(num1) * Number(num2))
 
-//DISPOSITIONS BELOW-----------------------
+  //DISPOSITIONS BELOW-----------------------
   handleResetClick = (e) => {
     this.setState({
       status: 'New',
@@ -33,37 +33,37 @@ export class Customer extends Component {
       ppw: ''
     }, () => this.props.updateCustomer(this.state))
   }
-  
+
   handleSoldClick = (e) => {
     this.setState({
       status: 'SOLD'
     }, () => this.props.updateCustomer(this.state))
     alert('NICE WORK! $$$$$')
-    }
+  }
 
   handleVInterestedClick = (e) => {
     this.setState({
       status: 'Very Interested'
     }, () => this.props.updateCustomer(this.state))
   }
-  
+
   handleCallbackClick = (e) => {
     this.setState({
       status: 'Call Back'
     }, () => this.props.updateCustomer(this.state))
-    
+
   }
-  
+
   handleDeclineClick = (e) => {
     this.setState({
       status: 'Declined'
     }, () => this.props.updateCustomer(this.state))
     alert(`Screw ${this.state.firstName} ${this.state.lastName}!`)
-    
+
   }
-//DISPOSITIONS ABOVE---------------------------
-  
-  
+  //DISPOSITIONS ABOVE---------------------------
+
+
 
 
   handleEditClick = () => {
@@ -140,7 +140,7 @@ export class Customer extends Component {
         <div className="customers" >
           <div>
             <p><strong><img src="https://image.flaticon.com/icons/png/512/9/9273.png" width="20px" alt="" />: {this.props.customer.firstName} {this.props.customer.lastName}</strong></p>
-            <p><img src="https://image.flaticon.com/icons/png/512/15/15407.png" width="20px"alt=""  />: {this.props.customer.phoneNumber}</p>
+            <p><img src="https://image.flaticon.com/icons/png/512/15/15407.png" width="20px" alt="" />: {this.props.customer.phoneNumber}</p>
             <p><img src="http://www.pngmart.com/files/7/E-Mail-PNG-Pic.png" width="20px" alt="" />: {this.props.customer.email}</p>
             <p><img src="http://www.stickpng.com/assets/images/588891debc2fc2ef3a1860a2.png" width="20px" alt="" />: {this.props.customer.street}, {this.props.customer.city}, {this.props.customer.state} {this.props.customer.zip} </p>
             <p><img src="http://cdn.onlinewebfonts.com/svg/img_564375.png" width="20px" alt="" />: {this.props.customer.currentUsage} kWh/annually</p>
@@ -162,7 +162,7 @@ export class Customer extends Component {
                 <button className="interested" style={{ marginLeft: '5px' }} onClick={this.handleVInterestedClick}>Mark As Interested</button>
                 <button className="callBack" style={{ marginLeft: '5px' }} onClick={this.handleCallbackClick}>Call Back</button>
                 <button className="declined" style={{ marginLeft: '5px' }} onClick={this.handleDeclineClick}>Not Interested</button>
-                <button style={{ marginLeft: '5px' }}onClick={this.handleResetClick}>Reset</button>
+                <button style={{ marginLeft: '5px' }} onClick={this.handleResetClick}>Reset</button>
               </div>
             </div>
           </div>
